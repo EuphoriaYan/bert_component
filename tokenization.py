@@ -431,7 +431,7 @@ class CompPieceTokenizer(object):
     self.unk_token = unk_token
     self.max_input_chars_per_word = max_input_chars_per_word
     self.comp_dict = dict()
-    with open("chise-ids\\IDS-UCS-Basic.txt", "r", encoding="utf-8") as chaizi:
+    with open("chise-ids/IDS-UCS-Basic.txt", "r", encoding="utf-8") as chaizi:
       pattern = re.compile('&[A-Z0-9-]+;|.')
       chaizi.readline()
       for line in chaizi:
