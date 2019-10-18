@@ -68,7 +68,7 @@ flags.DEFINE_integer("train_batch_size", 32, "Total batch size for training.")
 
 flags.DEFINE_integer("eval_batch_size", 8, "Total batch size for eval.")
 
-flags.DEFINE_float("learning_rate", 1e-5, "The initial learning rate for Adam.")
+flags.DEFINE_float("learning_rate", 5e-5, "The initial learning rate for Adam.")
 
 flags.DEFINE_integer("num_train_steps", 100000, "Number of training steps.")
 
