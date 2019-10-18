@@ -23,6 +23,9 @@ import modeling
 import optimization
 import tensorflow as tf
 
+os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
+os.environ['CUDA_VISIBLE_DEVICES'] = "2,3"
+
 flags = tf.flags
 
 FLAGS = flags.FLAGS
