@@ -120,3 +120,6 @@ dmypy.json
 
 # output
 output/
+
+# pretrained-bert
+chinese_wcm_bert/
