@@ -74,4 +74,4 @@ if __name__ == '__main__':
         logger.info("Weights from pretrained model not used in {}: {}".format(
             model.__class__.__name__, unexpected_keys))
 
-    model.save_state_dict("output/pytorch.bin")
+    torch.save(model.state_dict(), "output/pytorch.bin")
