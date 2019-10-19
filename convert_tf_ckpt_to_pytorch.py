@@ -20,15 +20,14 @@ def tr(v):
 def read_ckpt(ckpt):
     # https://github.com/tensorflow/tensorflow/issues/1823
     reader = tf.train.NewCheckpointReader(ckpt)
-    weights = {n: reader.get_tensor(n) for (n, _) in reader.get_variable_to_shape_map().iteritems()}
+    weights = {n: reader.get_tensor(n) for (n, _) in reader.get_variable_to_shape_map().items()}
     pyweights = {k: tr(v) for (k, v) in weights.items()}
     return pyweights
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description="Converts ckpt weights to deepdish hdf5")
-    parser.add_argument("infile", type=str,
-                        help="Path to the ckpt.")
+    parser = argparse.ArgumentParser(description="Converts tf bert ckpt weights to pytorch bin")
+    parser.add_argument("infile", type=str, help="Path to the ckpt.")
     args = parser.parse_args()
     state_dict = read_ckpt(args.infile)
     bert_config = BertConfig.from_json_file("configs/bert_config.json")
@@ -74,4 +73,4 @@ if __name__ == '__main__':
         logger.info("Weights from pretrained model not used in {}: {}".format(
             model.__class__.__name__, unexpected_keys))
 
-    torch.save(model.state_dict(), "output/pytorch.bin")
+    torch.save(model.state_dict(), "output/pytorch_model.bin")
