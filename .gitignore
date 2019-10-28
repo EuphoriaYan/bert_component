@@ -123,3 +123,6 @@ output/
 
 # pretrained-bert
 chinese_wcm_bert/
+
+# test
+test.py
