@@ -195,6 +195,8 @@ def create_training_instances(input_files, tokenizer, max_seq_length,
             while True:
                 line = tokenization.convert_to_unicode(reader.readline())
                 if not line:
+                    # EOF is used as document delimiters
+                    all_documents.append([])
                     break
                 line = line.strip()
 
