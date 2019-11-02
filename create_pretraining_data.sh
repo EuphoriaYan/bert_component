@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-input_file=./简体/诗藏
-output_file=output/shizang_data
+input_file=./简体/史藏
+output_file=output/shiizang_data
 vocab_file=vocab2.txt
 
 
