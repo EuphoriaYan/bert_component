@@ -123,6 +123,10 @@ output/
 
 # pretrained-bert
 chinese_wcm_bert/
+chinese_L-12_H-768_A-12/
+
+# Dataset
+简体/
 
 # test
 test.py
