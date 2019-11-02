@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 input_file=./简体/子藏
-output_file=output/zizang_data
+output_file=output/zizang_data.tfrecord
 vocab_file=vocab2.txt
 
 
