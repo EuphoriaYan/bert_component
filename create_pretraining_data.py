@@ -441,7 +441,7 @@ def main(_):
       vocab_file=FLAGS.vocab_file, do_lower_case=FLAGS.do_lower_case)
 
   input_files = []
-  input_files_list = get_files("./繁体")
+  input_files_list = get_files("./简体")
 
   for input_pattern in input_files_list:
     input_files.extend(tf.gfile.Glob(input_pattern))
