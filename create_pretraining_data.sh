@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-output_file=output/pretraining_data
+output_file=output/jizang_data
 vocab_file=vocab2.txt
 
 
