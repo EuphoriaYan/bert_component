@@ -66,6 +66,11 @@ flags.DEFINE_float(
     "Probability of creating sequences which are shorter than the "
     "maximum length.")
 
+flags.DEFINE_bool(
+    "use_comp_tokenizer", True,
+    "Use Component tokenizer to pre-train Comp-BERT."
+)
+
 
 class TrainingInstance(object):
     """A single training instance (sentence pair)."""
@@ -440,9 +445,10 @@ def truncate_seq_pair(tokens_a, tokens_b, max_num_tokens, rng):
 def main(_):
     tf.logging.set_verbosity(tf.logging.INFO)
 
-    tokenizer = tokenization.CompTokenizer(
-        vocab_file=FLAGS.vocab_file, do_lower_case=FLAGS.do_lower_case)
-
+    if FLAGS.use_comp_tokenizer:
+        tokenizer = tokenization.CompTokenizer(vocab_file=FLAGS.vocab_file, do_lower_case=FLAGS.do_lower_case)
+    else:
+        tokenizer = tokenization.FullTokenizer(vocab_file=FLAGS.vocab_file, do_lower_case=FLAGS.do_lower_case)
     input_files = []
     input_files_list = get_files(FLAGS.input_file)
 
