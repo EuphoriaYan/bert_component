@@ -72,7 +72,7 @@ if __name__ == '__main__':
     parser.add_argument("infile", type=str, help="Path to the ckpt.")
     parser.add_argument("outfile", type=str, help="Path to the pytorch dump.")
     args = parser.parse_args()
-    bert_config = BertConfig.from_json_file("configs/bert_config.json")
+    bert_config = BertConfig.from_json_file("chinese_L-12_H-768_A-12/bert_config.json")
     model = BertModel(bert_config)
     load_tf_weights_in_bert(model, args.infile)
     torch.save(model.state_dict(), args.outfile)
