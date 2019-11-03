@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 config_path=configs/bert_config.json
-input_file=output/pretraining_data
+input_file=output/jizang_data.tfrecord,output/ruzang_data.tfrecord,output/shi1zang_data.tfrecord,output/shi3zang_data.tfrecord1,output/shi3zang_data.tfrecord2,output/shi3zang_data.tfrecord3,output/zizang_data.tfrecord
 output_dir=output/
 
 
