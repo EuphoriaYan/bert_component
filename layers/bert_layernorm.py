@@ -1,13 +1,6 @@
 #!/usr/bin/env python3 
 # -*- coding: utf-8 -*- 
 
-
-
-# Author: Xiaoy LI 
-# Contact: xiaoya_li@shannonai.com 
-# Last update: 2019.04.04 
-# First create: 2019.03.29 
-# Description:
 # bert_layernorm.py 
 
 
