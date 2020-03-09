@@ -19,12 +19,10 @@ from __future__ import division
 from __future__ import print_function
 
 import os
+import logging
 import modeling
 import optimization
 import tensorflow as tf
-
-os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
-os.environ['CUDA_VISIBLE_DEVICES'] = "3"
 
 flags = tf.flags
 
@@ -408,6 +406,9 @@ def _decode_record(record, name_to_features):
 
 def main(_):
   tf.logging.set_verbosity(tf.logging.INFO)
+  logger = logging.getLogger()
+  while logger.handlers:
+    logger.handlers.pop()
 
   if not FLAGS.do_train and not FLAGS.do_eval:
     raise ValueError("At least one of `do_train` or `do_eval` must be True.")

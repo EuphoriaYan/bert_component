@@ -20,6 +20,7 @@ from __future__ import print_function
 
 import collections
 import random
+import logging
 import tokenization
 import tensorflow as tf
 from get_txt_files import get_files
@@ -444,6 +445,9 @@ def truncate_seq_pair(tokens_a, tokens_b, max_num_tokens, rng):
 
 def main(_):
     tf.logging.set_verbosity(tf.logging.INFO)
+    logger = logging.getLogger()
+    while logger.handlers:
+        logger.handlers.pop()
 
     if FLAGS.use_comp_tokenizer:
         tokenizer = tokenization.CompTokenizer(vocab_file=FLAGS.vocab_file, do_lower_case=FLAGS.do_lower_case)
@@ -475,6 +479,7 @@ def main(_):
 
 
 if __name__ == "__main__":
+    flags.mark_flag_as_required("iutput_file")
     flags.mark_flag_as_required("output_file")
     flags.mark_flag_as_required("vocab_file")
     tf.app.run()
