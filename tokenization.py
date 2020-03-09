@@ -469,6 +469,9 @@ class CompPieceTokenizer(object):
             if len(chars) == 1:
                 char = chars[0]
                 if '\u4e00' <= char <= '\u9fff':
+                    if char not in self.vocab:
+                        output_tokens.append(self.unk_token)
+                        continue
                     output_tokens.append(char)
                     comp_list = self.comp_dict.get(char)
                     if comp_list:
@@ -505,6 +508,8 @@ class CompPieceTokenizer(object):
 
 if __name__ == '__main__':
     tokenizer = CompTokenizer("vocab2.txt")
-    print(tokenizer.tokenize("园林"))
-    print(tokenizer.tokenize("一个人"))
-    print(tokenizer.tokenize("unaffable"))
+    #print(tokenizer.tokenize("园林"))
+    #print(tokenizer.tokenize("一个人"))
+    #print(tokenizer.tokenize("unaffable"))
+    tokens = tokenizer.tokenize("龬")
+    print(tokenizer.convert_tokens_to_ids(tokenizer.tokenize("龬")))
