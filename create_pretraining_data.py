@@ -454,9 +454,12 @@ def main(_):
     else:
         tokenizer = tokenization.FullTokenizer(vocab_file=FLAGS.vocab_file, do_lower_case=FLAGS.do_lower_case)
     input_files = []
-    input_files_list = get_files(FLAGS.input_file)
+    # input_files_list = get_files(FLAGS.input_file)
 
-    for input_pattern in input_files_list:
+    # for input_pattern in input_files_list:
+    #    input_files.extend(tf.gfile.Glob(input_pattern))
+
+    for input_pattern in FLAGS.input_file.split(","):
         input_files.extend(tf.gfile.Glob(input_pattern))
 
     tf.logging.info("*** Reading from input files ***")
