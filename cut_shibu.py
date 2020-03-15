@@ -2,6 +2,7 @@
 
 if __name__ == '__main__':
     documents = []
+    documents.append([])
     with open('corpus/cleaned/shibu.txt', 'r', encoding='utf-8') as f:
         for line in f:
             if line.strip() == '':
