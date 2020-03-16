@@ -1,4 +1,7 @@
 # -*- coding: utf-8 -*-
+
+export CUDA_VISIBLE_DEVICES=3
+
 config_path=configs/bert_config.json
 input_file='tfrecords/*.*'
 output_dir=model_output/
