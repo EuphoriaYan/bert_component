@@ -1,6 +1,6 @@
 # * - coding=utf-8 - * #
 
-if __name__ == '__main__':
+def cut_shibu():
     documents = []
     documents.append([])
     with open('corpus/cleaned/shibu.txt', 'r', encoding='utf-8') as f:
@@ -23,3 +23,7 @@ if __name__ == '__main__':
         f2.write('\n')
     f1.close()
     f2.close()
+
+
+if __name__ == '__main__':
+    cut_shibu()

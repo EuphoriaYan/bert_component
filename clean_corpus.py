@@ -1,5 +1,6 @@
 import re
 from tqdm import tqdm
+import cut_shibu
 
 def replace_quotes(s):
     s = s.replace('「', '“')
@@ -155,6 +156,11 @@ def clean_yiji():
                     target_line = ''
                     flag = True
                     f_tar.write('\n')
+
+
+def clean_shibu():
+    # TODO
+    cut_shibu.cut_shibu()
 
 
 if __name__ == '__main__':
